@@ -1,0 +1,8 @@
+git log --all
+
+git cherry-pick 8953018395459d7c93cbe3adf4bade3a8fc41d42
+git cherry-pick 51c2aee605a418bc265e59af8fd53ff66e777762
+
+git branch -D master
+git push origin --delete master
+git push origin --all
