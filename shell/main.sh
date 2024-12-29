@@ -1,13 +1,5 @@
 #!/bin/bash
 
-readonly DOCKER_IMAGE_NAME="spring-boot-image/password-generator"
-readonly PATH_TO_JAR_FILE="../target/password-generator.jar"
-readonly SERVICE_FILE="pg.service"
-readonly JAR_FILE_FOLDER="/var/jdev_services/pg/"
-readonly LOG_FILE_NAME="pg.log"
-readonly USERNAME="java_dev"
-readonly PORT_NUMBER=11001
-
 #---------------------------------------------------
 clean_install() {
   if [ -z $1 ]; then
