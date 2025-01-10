@@ -37,7 +37,7 @@ public class TestRestController {
     }
 
     @GetMapping("/get/{uuid}")
-    public ResponseEntity<LocalDateTime> getTestById(@PathVariable String uuid) {
+    public ResponseEntity<LocalDateTime> getTestById(@PathVariable("uuid") String uuid) {
         log.info("---getTestById---[{}]", uuid);
         final LocalDateTime localDateTime = TEST_MAP.get(uuid);
         return localDateTime == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(localDateTime);
@@ -49,9 +49,15 @@ public class TestRestController {
         return ResponseEntity.ok(TEST_MAP);
     }
 
+    /**
+     problem -
+     java.lang.IllegalArgumentException: Name for argument of type [boolean] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.
+     was - @RequestParam(required = false, defaultValue = "false")
+     solution - @RequestParam(required = false, defaultValue = "false", value = "isThrowException") boolean isThrowException
+     * */
     @GetMapping("/check-exception")
     public ResponseEntity<String> checkException(
-            @RequestParam(required = false, defaultValue = "false") boolean isThrowException) {
+            @RequestParam(required = false, defaultValue = "false", value = "isThrowException") boolean isThrowException) {
         log.info("---checkException---");
         if (isThrowException) {
             throw new RuntimeException("exception!");
