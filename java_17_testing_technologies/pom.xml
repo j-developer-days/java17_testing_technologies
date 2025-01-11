@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.jdev</groupId>
         <artifactId>jdev_maven_parent</artifactId>
-        <version>1-25.12.2024-j17</version>
+        <version>1.1-10.01.2025-j17</version>
     </parent>
 
     <groupId>com.jdev</groupId>
