@@ -36,7 +36,7 @@ public class AvroDemo {
 //        writeToFile(userFull, "user1.avro");
 //        writeToFileListOfInstances(List.of(userFull, new User("Test2", 199, "Gray")), "user1_multi.avro");
 //        readFromAvroFile("user1_multi.avro").forEach(System.out::println);
-//        writeGenericObjectToFile("src/main/avro/user.avsc");
+        writeGenericObjectToFile("src/main/avro/user.avsc");
         readGenericObjectFromFile("src/main/avro/user.avsc");
     }
 
